@@ -1,17 +1,8 @@
 spring:
-  application:
-    name: job-service
-
-  cloud:
-    config:
-      enabled: true
-      import-check:
-        enabled: true
-
   datasource:
     url: jdbc:postgresql://localhost:5432/jobdb
     username: postgres
-    password: admin   # quote the password
+    password: root
     driver-class-name: org.postgresql.Driver
 
   jpa:
