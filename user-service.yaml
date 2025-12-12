@@ -4,6 +4,11 @@ server:
 spring:
   application:
     name: user-service
+    cloud:
+      config:
+        enabled: true
+        import-check:
+            enabled: true
 
   datasource:
     url: jdbc:postgresql://localhost:5432/user_details

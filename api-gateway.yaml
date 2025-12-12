@@ -1,6 +1,11 @@
 spring:
   application:
     name: api-gateway
+    cloud:
+        config:
+            enable: true
+            import-check:
+                enabled: true
 
 server:
   port: 8765

@@ -4,9 +4,9 @@ spring:
 
   cloud:
     config:
-      enabled: false
+      enabled: true
       import-check:
-        enabled: false
+        enabled: true
 
   datasource:
     url: jdbc:postgresql://localhost:5432/jobdb
