@@ -17,4 +17,4 @@ auth:
 security:
   jwt:
     secret-key: ${JWT_SECRET_KEY:036e0ce585032470454dc6ece4e78ac74918d56b70774ae7d1fd45ca0725ac4a}
-    expiration-time: ${JWT_EXPIRATION_TIME:36000000}
+    expiration-time: ${JWT_EXPIRATION_TIME:10800000}
