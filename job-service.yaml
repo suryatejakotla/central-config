@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/jobdb
-    username: postgres
-    password: root
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/jobdb}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:root}
     driver-class-name: org.postgresql.Driver
 
   jpa:
@@ -21,18 +21,18 @@ spring:
     validate-on-migrate: false
 
   rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
+    host: ${RABBITMQ_HOST:localhost}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USERNAME:guest}
+    password: ${RABBITMQ_PASSWORD:guest}
 
 eureka:
   client:
     serverUrl:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka}
   instance:
-    hostname: localhost
+    hostname: ${EUREKA_HOSTNAME:localhost}
     prefer-ip-address: true
 
 server:
-  port: 8001
+  port: ${SERVER_PORT:8001}
