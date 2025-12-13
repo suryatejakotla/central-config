@@ -1,32 +1,20 @@
-spring:
-  application:
-    name: api-gateway
-    cloud:
-        config:
-            enable: true
-            import-check:
-                enabled: true
-
 server:
-  port: 8765
+  port: ${SERVER_PORT:8765}
 
 eureka:
   client:
     serverUrl:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka}
   instance:
-    hostname: localhost
+    hostname: ${EUREKA_HOSTNAME:localhost}
     prefer-ip-address: true
 
 auth:
   introspection:
-    enabled: false
-    url: http://localhost:8081/api/auth/introspect
+    enabled: ${AUTH_INTROSPECTION_ENABLED:false}
+    url: ${AUTH_INTROSPECTION_URL:http://localhost:8081/api/auth/introspect}
 
 security:
   jwt:
-    secret-key: 036e0ce585032470454dc6ece4e78ac74918d56b70774ae7d1fd45ca0725ac4a
-    expiration-time: 36000000
-#logging:
-#  level:
-#    root: debug
+    secret-key: ${JWT_SECRET_KEY:036e0ce585032470454dc6ece4e78ac74918d56b70774ae7d1fd45ca0725ac4a}
+    expiration-time: ${JWT_EXPIRATION_TIME:36000000}
